@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "rm -rf .svelte-kit && vite dev",
-    "build": "vite build && cp ./yt-dp ./build/",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
