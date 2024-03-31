@@ -1,0 +1,86 @@
+$pri: #08d9d6;
+$sec: #252a34;
+$hl: #ff2e63;
+$light: #eaeaea;
+
+$maxwidth: 450px;
+$mobile: 860px;
+
+$page-index: 2;
+$page-bottom-padding: 5vh;
+
+@mixin blur {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: saturate(180%) blur(8px);
+}
+@mixin shadow {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+}
+@mixin cover($src) {
+  background-image: url($src);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@mixin sans {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin section($height, $width) {
+  height: $height;
+  width: $width;
+}
+@mixin grid($column, $row) {
+  display: grid;
+  grid-template-columns: $column;
+  grid-template-rows: $row;
+}
+@mixin fullscreen {
+  height: 100vh;
+  width: 100vw;
+}
+@mixin absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@mixin fixed($top, $left) {
+  position: fixed;
+  top: $top;
+  left: $left;
+}
+@mixin flex($dir) {
+  display: flex;
+  flex-direction: $dir;
+}
+@mixin flex-center {
+  justify-content: center;
+  align-items: center;
+}
+@mixin no-padding-margin {
+  padding: 0;
+  margin: 0;
+}
+@mixin mono {
+  font-family: "Source Code Pro", monospace;
+}
+@mixin cursive {
+  font-family: "Caveat", cursive;
+}
+@mixin para {
+  width: 80vw;
+  max-width: 800px;
+  text-align: center;
+}
+
+@mixin component {
+  @include section(auto, 88vw);
+  @include shadow;
+
+  max-width: $maxwidth;
+  padding: 1vw;
+  color: $light;
+  border-radius: 10px;
+  background-color: $sec;
+}
