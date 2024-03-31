@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "rm -rf .svelte-kit && vite dev",
-    "build": "vite build",
+    "build": "vite build && cp ./yt-dp ./build/",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -12,14 +12,11 @@
     "sass": "^1.63.4",
     "svelte": "^3.54.0",
     "svelte-preprocess": "^5.0.4",
-    "vite": "^4.3.0",
-    "yt-dlp-wrap": "^2.3.12"
+    "vite": "^4.3.0"
   },
   "type": "module",
   "dependencies": {
-    "@auth/core": "^0.28.0",
-    "@auth/sveltekit": "^0.14.0",
     "@sveltejs/adapter-netlify": "^2.0.7",
-    "aos": "^2.3.4"
+    "yt-dlp-wrap": "^2.3.12"
   }
 }

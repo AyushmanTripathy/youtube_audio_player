@@ -1,7 +1,8 @@
-import ytDlpWrap from "yt-dlp-wrap";
+import ytDlpWrap from 'yt-dlp-wrap';
 
 const cache = {};
-const ytDlp = new ytDlpWrap("./yt-dlp");
+console.log(ytDlpWrap)
+const ytDlp = ytDlpWrap.default ? new ytDlpWrap.default("./yt-dlp"): new ytDlpWrap("./yt-dlp");
 
 async function getAudioUrl(link) {
   if (cache[link]) return cache[link];

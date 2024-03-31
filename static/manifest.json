@@ -1,8 +1,14 @@
 {
-  "short_name": "Audio",
+  "short_name": "Youtube Audio",
   "name": "Youtube Audio Player",
   "start_url": "/",
-  "icons": [{}],
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "500x500"
+    }
+  ],
   "background_color": "#08D9D6",
   "display": "standalone",
   "scope": "/",
