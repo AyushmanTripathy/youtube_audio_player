@@ -1,6 +1,7 @@
 <script>
   import Help from "./Help.svelte";
   import Pin from "./Pin.svelte";
+  import Input from "./Input.svelte";
   import { onMount } from "svelte";
 
   let pins = [];
@@ -13,6 +14,7 @@
 </script>
 
 <Help />
+<Input />
 
 {#each pins as pin}
 <Pin data={pin}/>
