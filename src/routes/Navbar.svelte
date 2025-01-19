@@ -3,7 +3,7 @@
 </script>
 
 <main>
-  <h3> Youtube Audio </h3>
+  <h3> </h3>
   <button on:click="{back}">
     <span class="material-symbols-outlined"> arrow_back_ios </span>
   </button>
@@ -12,8 +12,8 @@
 <style lang="scss">
   main {
     @include component;
-    display: inline-flex;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 4vh;
   }

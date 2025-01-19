@@ -79,7 +79,9 @@ $page-bottom-padding: 5vh;
   @include shadow;
 
   max-width: $maxwidth;
-  padding: 1vw;
+  padding: 3vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
   color: $light;
   border-radius: 10px;
   background-color: $sec;

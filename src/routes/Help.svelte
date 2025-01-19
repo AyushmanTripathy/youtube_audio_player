@@ -1,5 +1,3 @@
-<script></script>
-
 <main>
   <section>
     <h3>Youtube Audio Player</h3>

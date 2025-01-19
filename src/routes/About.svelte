@@ -4,13 +4,28 @@
   export let title;
   export let des;
 
-  let description;
-  onMount(() => (description.innerText = des));
+  let toggled = false,
+    description = "Toggle Description";
+
+  function toggleDescription() {
+    if (toggled) description.innerText = "";
+    else description.innerText = des;
+    toggled = !toggled;
+  }
 </script>
 
 <main>
   <h3>{title}</h3>
-  <div bind:this="{description}"></div>
+  <div>
+    <p bind:this="{description}"></p>
+    <p on:click="{toggleDescription}">
+      {#if toggled}
+      <span class="material-symbols-outlined"> keyboard_arrow_up </span>
+      {:else}
+      <span class="material-symbols-outlined"> keyboard_arrow_down </span>
+      {/if}
+    </p>
+  </div>
 </main>
 
 <style lang="scss">
