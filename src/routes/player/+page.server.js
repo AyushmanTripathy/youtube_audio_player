@@ -1,24 +1,19 @@
-import ytDlpWrap from 'yt-dlp-wrap';
+import ytdl from "@distube/ytdl-core";
 
 const cache = {};
-console.log(ytDlpWrap)
-const ytDlp = ytDlpWrap.default ? new ytDlpWrap.default("./yt-dlp"): new ytDlpWrap("./yt-dlp");
-
 async function getAudioUrl(link) {
   if (cache[link]) return cache[link];
 
-  const metadata = await ytDlp.getVideoInfo(link);
-  let bestUrl = null, bestSize = Infinity; 
-  for (const format of metadata.formats) {
-    if (format.video_ext == "none" && format.audio_ext != "none") {
-      if (bestSize > format.filesize) {
-        bestUrl = format.url;
-        bestSize = format.filesize;
-      }
+  const info = await ytdl.getInfo(link);
+  let url = null;
+  for (const format of info.formats) {
+    if (format.hasAudio && !format.hasVideo) {
+      url = format.url;
+      if (format.quality == "tiny" || format.quality == "small")
+        break;
     }
   }
-
-  const output = [metadata.fulltitle, metadata.description, bestUrl];
+  const output = [info.videoDetails.title, info.videoDetails.description, url];
   cache[link] = output;
   return output;
 }
