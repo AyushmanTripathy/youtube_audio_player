@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-netlify';
 import proprocess from "svelte-preprocess";
+import adapter from "@sveltejs/adapter-node";
 
 const config = {
   preprocess: proprocess({
